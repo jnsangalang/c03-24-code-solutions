@@ -1,0 +1,16 @@
+'use strict';
+let fullName = 'Johan Sangalang';
+console.log('Fullname:', fullName);
+console.log('Type:', typeof fullName);
+let isCool = false;
+console.log('Is cool:', isCool);
+console.log('Type:', typeof isCool);
+let totalPets = 1;
+console.log('Total pets:', totalPets);
+console.log('Type:', typeof totalPets);
+let empty = null;
+console.log('empty is:', empty);
+console.log('Type:', typeof empty);
+let nothing;
+console.log('nothing is:', nothing);
+console.log('Type:', typeof nothing);
