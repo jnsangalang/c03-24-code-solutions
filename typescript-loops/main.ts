@@ -7,7 +7,7 @@
             getValues
  */
 
-function getNumbersToTen(): any {
+function getNumbersToTen(): number[] {
   const numbers = [];
   let currentNumber = 1;
   while (currentNumber <= 10) {
@@ -18,7 +18,7 @@ function getNumbersToTen(): any {
 }
 console.log('Numbers to ten:', getNumbersToTen());
 
-function getEvenNumbersToTwenty(): any {
+function getEvenNumbersToTwenty(): number[] {
   const evenNumbers = [];
   let currentNumber = 2;
   while (currentNumber <= 20) {
@@ -29,7 +29,7 @@ function getEvenNumbersToTwenty(): any {
 }
 console.log('Even numbers to 20:', getEvenNumbersToTwenty());
 
-function repeatWord(word: string, times: number): any {
+function repeatWord(word: string, times: number): string {
   let count = 1;
   let repeated = '';
   while (count < times) {
@@ -40,14 +40,14 @@ function repeatWord(word: string, times: number): any {
 }
 console.log(repeatWord('cat', 20));
 
-function logEachCharacter(str: string): any {
+function logEachCharacter(str: string): undefined {
   for (let i = 0; i < str.length; i++) {
     console.log(str[i]);
   }
 }
 console.log(logEachCharacter('catapult'));
 
-function doubleAll(numbers: any): any {
+function doubleAll(numbers: number[]): number[] {
   const double = [];
   for (let i = 0; i < numbers.length; i++) {
     const doubleNum = numbers[i] * 2;
@@ -59,7 +59,7 @@ console.log('Doubled numbers:', doubleAll([5, 13, 22, 54, 65, 13]));
 
 type Obj = Record<string, unknown>;
 
-function getKeys(obj: Record<string, unknown>): any {
+function getKeys(obj: Record<string, unknown>): string[] {
   const keys = [];
   for (const key in obj) {
     keys.push(key);
@@ -78,7 +78,7 @@ console.log(
   getKeys(person)
 );
 
-function getValues(obj: Record<string, unknown>): any {
+function getValues(obj: Record<string, unknown>): unknown[] {
   const values = [];
   for (const value in obj) {
     values.push(obj[value]);
