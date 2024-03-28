@@ -27,7 +27,7 @@ function isEven(number: number): boolean {
 console.log('Is it even (26)?', isEven(26));
 
 function startsWithJ(string: string): boolean {
-  if (string[0] === ('J' || 'j')) {
+  if (string[0] === 'J') {
     return true;
   } else {
     return false;
