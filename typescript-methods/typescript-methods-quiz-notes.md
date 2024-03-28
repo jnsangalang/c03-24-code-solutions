@@ -37,7 +37,7 @@ Answer the following questions in the provided markdown file before turning in t
   56
 
 - Is the return value of a function or method useful in every situation?
-  yes, prevents endless loops, allows for debugging
+  no, because sometimes we have a function to perform its function, but not necessarily care about the return
 
 - Roughly how many array methods are there according to the MDN Web docs?
   44

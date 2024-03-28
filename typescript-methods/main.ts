@@ -1,8 +1,8 @@
 const heroes: string[] = ['Black Canary', 'The Flash', 'Starfire', 'Gambit'];
-const randomNumber: number = Math.random();
-const randomNumber2: number = randomNumber * heroes.length;
+let randomNumber: number = Math.random();
+randomNumber = randomNumber * heroes.length;
 
-const randomIndex: number = Math.floor(randomNumber2);
+const randomIndex: number = Math.floor(randomNumber);
 
 console.log('The random number:', randomIndex);
 const randomHero: string = heroes[randomIndex];

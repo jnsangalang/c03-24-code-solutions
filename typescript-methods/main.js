@@ -1,8 +1,8 @@
 'use strict';
 const heroes = ['Black Canary', 'The Flash', 'Starfire', 'Gambit'];
-const randomNumber = Math.random();
-const randomNumber2 = randomNumber * heroes.length;
-const randomIndex = Math.floor(randomNumber2);
+let randomNumber = Math.random();
+randomNumber = randomNumber * heroes.length;
+const randomIndex = Math.floor(randomNumber);
 console.log('The random number:', randomIndex);
 const randomHero = heroes[randomIndex];
 console.log('Hero:', randomHero);
