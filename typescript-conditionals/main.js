@@ -72,56 +72,54 @@ console.log(
 );
 function categorizeAcidity(pH) {
   if (pH === 7) {
-    console.log('This is a neutral substance');
+    return `neutral`;
   } else if (pH > 7 && pH <= 14) {
-    console.log('This substance is basic');
+    return `basic`;
   } else if (pH >= 0 && pH < 7) {
-    console.log('This substance is acidic');
+    return `acidic`;
   } else {
-    console.log('This substance is INVALID');
+    return false;
   }
 }
-categorizeAcidity(14);
+console.log('categorized acidity:', categorizeAcidity(14));
 function introduceWarnerBro(name) {
   switch (name) {
     case 'yakko':
     case 'wakko':
-      console.log(`The brothers: We're the warner brothers!`);
+      return `We're the warner bros`;
       break;
     case 'dot':
-      console.log(`Dot:I'm cute ~`);
+      return `I'm cute~`;
       break;
     default:
-      console.log('Who are you? Goodnight everybody!');
+      return `Goodnight Everybody`;
   }
 }
-introduceWarnerBro('wakko');
-introduceWarnerBro('dot');
-introduceWarnerBro('johan');
+console.log(introduceWarnerBro('wakko'));
+console.log(introduceWarnerBro('dot'));
+console.log(introduceWarnerBro('johan'));
 function recommendMovie(genre) {
   switch (genre) {
     case 'action':
-      console.log('Action:Die Hard');
+      return 'Action:Die Hard';
       break;
     case 'comedy':
-      console.log('Comedy:The Proposal');
+      return 'Comedy:The Proposal';
       break;
     case 'horror':
-      console.log('Horror:Final Destination');
+      return 'Horror:Final Destination';
       break;
     case 'drama':
-      console.log('Drama:La La Land');
+      return 'Drama:La La Land';
       break;
     case 'musical':
-      console.log('Musical:Hairspray');
+      return 'Musical:Hairspray';
       break;
     case 'sci-fi':
-      console.log('Sci-Fi:Resident Evil');
+      return 'Sci-Fi:Resident Evil';
       break;
     default:
-      console.log(
-        'Genre not recognized, please use one the following: action, comedy, horror, drama, musical, or sci-fi'
-      );
+      return 'Genre not recognized, please use one the following: action, comedy, horror, drama, musical, or sci-fi';
   }
 }
-recommendMovie('horror');
+console.log(recommendMovie('horror'));
