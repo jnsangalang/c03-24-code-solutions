@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .indent {
+        display: block;
+        margin: 10px;
+      }
+      fieldset {
+        border: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1><strong>Coding Form!</strong></h1>
+    <form>
+      <div class="indent">
+        <label for="Email">Email:</label><br />
+        <input
+          type="text"
+          id="Email"
+          name="Email"
+          placeholder="Email@blah.com"
+          required />
+      </div>
+    </form>
+    <form>
+      <div class="indent">
+        <label for="reason">Why is coding cool?</label><br />
+        <select name="reason" id="reason">
+          <option value="" disabled selected>Select</option>
+          <option value="fun">Because it's fun</option>
+          <option value="interesting">Because it's interesting</option>
+          <option value="powerful">Because it's powerful</option>
+        </select>
+      </div>
+    </form>
+    <form>
+      <div>
+        <fieldset>
+          <legend>Favorite Language (Choose one:)</legend>
+          <input type="radio" id="HTML" name="language" value="HTML" />
+          <label for="HTML">HTML</label>
+
+          <input type="radio" id="CSS" name="language" value="CSS" />
+          <label for="CSS">CSS</label>
+
+          <input
+            type="radio"
+            id="Javascript"
+            name="language"
+            value="Javascript" />
+          <label for="Javascript">Javascript</label>
+        </fieldset>
+      </div>
+    </form>
+
+    <p>Would you like to sign up for more information?</p>
+    <form>
+      <div>
+        <input
+          type="checkbox"
+          id="sign_me_up"
+          name="sign_me_up"
+          value="sign_me_up" />
+        <label for="sign_me_up">Sign me up!</label>
+      </div>
+    </form>
+    <form>
+      <label for="comment">Comments:</label><br />
+      <textarea id="comment" name="comment" rows="7" cols="40">
+Comments here
+</textarea
+      ><br />
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
