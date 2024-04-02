@@ -6,5 +6,5 @@ function defaults(target, source) {
       target[key] = source[key];
     }
   }
-  console.log(defaults);
+  return 0;
 }
