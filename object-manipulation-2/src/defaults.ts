@@ -8,5 +8,6 @@ function defaults(
       target[key] = source[key];
     }
   }
+
   return 0;
 }
