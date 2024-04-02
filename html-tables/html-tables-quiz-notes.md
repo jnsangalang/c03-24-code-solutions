@@ -6,7 +6,7 @@ Answer the following questions in the provided markdown file before turning in t
 
 - What are the six primary HTML elements for creating tables?
 
-<caption><table>, <thead> <tr> <th><td><tbody>
+<table>, <thead> <tr> <th><td><tbody><tfoot>
 
 - What purpose do the `thead` and `tbody` elements serve?
 
@@ -15,6 +15,7 @@ Answer the following questions in the provided markdown file before turning in t
 
 - Give two examples of data that would lend itself well to being displayed in a table.
 
+monthly spending
 price changes of items
 average temperature of an area
 
