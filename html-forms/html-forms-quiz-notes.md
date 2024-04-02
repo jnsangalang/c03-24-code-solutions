@@ -14,7 +14,7 @@ allows users to enter data, ie requesting inputs
 
 - Give three examples of `type` attribute values for HTML `<input>` elements.
 
-'text', 'submit', 'button'
+email,search,password,checkbox
 
 - Is an HTML `<input>` element a block element or an inline element?
 
