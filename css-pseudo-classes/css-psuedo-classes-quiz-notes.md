@@ -6,7 +6,7 @@ Answer the following questions in the provided markdown file before turning in t
 
 - What is a pseudo-class?
 
-a selector that selects elements that are in a specific state, ex: first of their type, being hovered over by mouse,
+a selector that selects elements that are in a specific state, ex: first of their type, being hovered over by mouse
 
 - What are CSS pseudo-classes useful for?
 
