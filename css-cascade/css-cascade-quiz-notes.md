@@ -14,11 +14,11 @@ the order that your CSS rules are written in stylesheet
 
 - How is it possible for the styles of an element to be applied to its children as well without an additional CSS rule?
 
-inheritance
+inheritance, applying css property to parent tag.
 
 - List the three selector types in order of increasing specificity.
 
-ID, class, type
+element,class,ID
 
 - Why is using `!important` considered bad practice?
 
