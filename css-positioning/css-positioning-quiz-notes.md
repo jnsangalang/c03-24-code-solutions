@@ -10,11 +10,11 @@ static
 
 - How does setting `position: relative` on an element affect document flow?
 
-can overlap over tother elements without interrupting normal document flow
+can overlap over other elements without interrupting normal document flow
 
 - How does setting `position: relative` on an element affect where it appears on the page?
 
-using top,bottom,right,left allows to change where it shows up on the page
+does not impact where it appears, unless using offset (top,bottom,right,left)
 
 - How does setting `position: absolute` on an element affect document flow?
 
@@ -22,11 +22,11 @@ it removes the element from the normal document flow, and sets itself onto anoth
 
 - How does setting `position: absolute` on an element affect where it appears on the page?
 
-it appears above the document flow, in its own layer
+it appears above the document flow, moves up, in its own layer
 
 - How do you constrain an absolutely positioned element to a containing block?
 
-if no ancestor elements have position property defined, then all ancestor elements will be static, resulting in the absolutely positioned element will be contained in initial containing block
+set containing block to any position, other than static
 
 - What are the four box offset properties?
 
