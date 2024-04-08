@@ -10,7 +10,7 @@ helps with debugging, and ensuring the output is what you are expecting out of t
 
 - What is a "model"?
 
-a system of equations including an objective function and a set of constraints
+a system of equations including an objective function and a set of constraints, simpler:model is a re-creation of something.
 
 - Which "document" is being referred to in the phrase Document Object Model?
 
@@ -27,7 +27,7 @@ the hierarchal structure of an html document
 - Give two examples of `document` methods that retrieve a single element from the DOM.
 
 getElementById(id)
-getElementByClassNamee(className)
+querySelector()
 
 - Give one example of a `document` method that retrieves multiple elements from the DOM at once.
 
@@ -35,7 +35,7 @@ querySelectorAll()
 
 - Why might you want to assign the return value of a DOM query to a variable?
 
-it allows ease upon interface when querying the DOM. if return value is stored in a variable, accessing the element again does not need another search
+it allows ease upon interface when querying the DOM. if return value is stored in a variable, accessing the element again does not need another search; always have a reference to the dom variable
 
 - What `console` method allows you to inspect the properties of a DOM element object?
 
@@ -43,17 +43,17 @@ console.dir(elem)
 
 - Why would a `<script>` tag need to be placed at the bottom of the HTML content instead of at the top?
 
-it can improve webpage's load time, content gets loaded first
+it can improve webpage's load time, content gets loaded first; need to let the browser parse through document first, then the script.
 
 - What does `document.querySelector()` take as its argument and what does it return?
 
-the argument is a selector, 'p' '.class'
+the argument is any valid css selector, 'p' '.class'
 it returns the first Element within the document that matches the selector
 
 - What does `document.querySelectorAll()` take as its argument and what does it return?
 
-the parameter is a selector/
-document.querySelectorAll() returns multiple elements, those of which match the selector provided
+the parameter is a string, matching a css selector
+document.querySelectorAll() returns static node list of multiple elements, those of which match the selector provided.
 
 ## Notes
 
