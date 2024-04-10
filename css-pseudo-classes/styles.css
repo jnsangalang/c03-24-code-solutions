@@ -1,0 +1,19 @@
+h1,
+h2 {
+  font-weight: bolder;
+}
+
+button:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+th {
+  background-color: black;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: lightgrey;
+}
