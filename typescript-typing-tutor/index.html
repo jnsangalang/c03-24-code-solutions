@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="heading">Typing Tutor</div>
+      <div class="phrase"><span>Today is a good day</span></div>
+      <textarea
+        class="input"
+        id="input"
+        placeholder="type here..."
+        oninput=""
+        onfocus="start()">
+      </textarea>
+      <button class="restart" onclick="resetValues()">Restart</button>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

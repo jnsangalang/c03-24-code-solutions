@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+html,
+body {
+  height: 100%;
+  text-align: center;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heading {
+  font-size: 4rem;
+  color: rgb(0, 0, 0);
+  margin-bottom: 10rem;
+}
+
+.phrase {
+  background-color: rgb(154, 235, 238);
+  width: 50%;
+  font-size: 2rem;
+  margin: 1rem;
+  padding: 3rem;
+}
+
+.input {
+  background-color: rgb(76, 212, 167);
+  height: 1rem;
+  width: 50%;
+  font-size: 2rem;
+  margin: 1rem;
+  padding: 2rem;
+  border-top: 1rem;
+}
+
+.correct {
+  color: rgb(1, 80, 13);
+}
+
+.incorrect {
+  color: rgb(255, 42, 0);
+  text-decoration: underline;
+}
