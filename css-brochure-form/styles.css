@@ -1,0 +1,40 @@
+.form-container {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.learn {
+  font-size: x-large;
+  color: orangered;
+  text-align: center;
+}
+
+.input-box,
+.dropdown {
+  border-radius: 6px;
+  border-color: lightgrey;
+  width: 500px;
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+label {
+  display: block;
+  padding-left: 10px;
+  font-size: smaller;
+}
+
+.submit {
+  border-radius: 15px;
+  border-color: orangered;
+  border-style: ;
+  display: block;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: 415px;
+  background-color: orangered;
+  color: white;
+  outline: inherit;
+}
