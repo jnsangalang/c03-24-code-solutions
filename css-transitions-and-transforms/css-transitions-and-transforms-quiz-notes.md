@@ -10,7 +10,7 @@ transition-property, transition-duration, transition-timing-function, transition
 
 - What does the `transform` property do?
 
-applies transformation to element
+applies transformation to element, with 2D or 3D elements
 
 - Give four examples of CSS transform functions.
 
