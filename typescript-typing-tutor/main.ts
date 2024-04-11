@@ -12,9 +12,10 @@ let currentChar = 0;
 
 document.addEventListener('keydown', (event: KeyboardEvent) => {
   if (event.key === $spanEl[currentChar].textContent) {
+    $spanEl[currentChar].classList.remove('incorrect');
     $spanEl[currentChar].classList.add('correct');
     currentChar++;
-  } else {
+  } else if (event.key !== $spanEl[currentChar].textContent) {
     $spanEl[currentChar].classList.add('incorrect');
   }
 });
