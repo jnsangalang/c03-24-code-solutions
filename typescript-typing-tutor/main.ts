@@ -8,13 +8,16 @@
 // if (!$input) throw new Error('The $input query failed');
 // if (!$spanEl) throw new Error('The $spanEl query failed');
 
-// $input.addEventListener('keydown', (event:Event) =>{
+// let currentChar=0;
+
+// $input.addEventListener('keydown', (event:KeyboardEvent) =>{
 //   let errorCount = 0;
-//     if((event as KeyboardEvent).key === $phrase.textContent){
-//       $input.classList.add('correct');
+//     if((event).key === $spanEl[currentChar].textContent){
+//       $spanEl[currentChar].classList.add('correct');
+//       currentChar++;
 //     }
 //     else{
-//       $phrase.classList.add('incorrect');
+//       $spanEl[currentChar].classList.add('incorrect');
 //       errorCount++;
 //     }
 //     if (errorCount === 0) {
