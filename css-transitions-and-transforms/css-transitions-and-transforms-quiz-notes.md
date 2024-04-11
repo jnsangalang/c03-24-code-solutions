@@ -9,6 +9,9 @@ Answer the following questions in the provided markdown file before turning in t
 transition-property, transition-duration, transition-timing-function, transition delay, transition behavior
 
 - What does the `transform` property do?
+
+applies transformation to element
+
 - Give four examples of CSS transform functions.
 
 scale, rotate, skew, translate, matrix
