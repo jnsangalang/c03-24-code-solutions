@@ -41,4 +41,4 @@ function getRangeReport(start: number, end: number): object {
 
   return obj;
 }
-console.log(getRangeReport(3, 5));
+console.log(getRangeReport(1, 5));

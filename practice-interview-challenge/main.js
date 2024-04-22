@@ -36,4 +36,4 @@ function getRangeReport(start, end) {
   }
   return obj;
 }
-console.log(getRangeReport(3, 5));
+console.log(getRangeReport(1, 5));
