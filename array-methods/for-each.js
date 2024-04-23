@@ -4,11 +4,5 @@ console.log('In order:');
 values.forEach(function (values) {
   console.log(values);
 });
-const reverseArr = [];
-for (let i = values.length - 1; i >= 0; i--) {
-  reverseArr.push(values[i]);
-}
 console.log('Reverse order:');
-reverseArr.forEach((values) => {
-  console.log(values);
-});
+values.forEach((n, index) => console.log(values[values.length - 1 - index]));
