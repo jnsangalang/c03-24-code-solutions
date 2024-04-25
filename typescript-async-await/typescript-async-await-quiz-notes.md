@@ -10,9 +10,11 @@ async is a type of function that returns a Promise; utilizes the await keyword t
 
 - How do `async` and `await` differ from `Promise.then` and `Promise.catch`?
 
-async functions get paused until a Promise is settled
+async uses try/catch blocks instead of .then and .catch. Easier to read async/await codes
 
-with then(), Javascript will continue to execute the rest of the function, and JS won't execute then.() callback until promise settles.
+<!-- async functions get paused until a Promise is settled
+
+with then(), Javascript will continue to execute the rest of the function, and JS won't execute then.() callback until promise settles. -->
 
 - When do you use `async`?
 
@@ -22,8 +24,7 @@ reduce the need for method chaining and nested callbacks. allows for improved re
 
 - When do you use `await`? When do you _not_ use `await`? (What happens if you `await` a synchronous function?)
 
-Right before a function you want to pause until a Promise is resolved.
-
+in an async function, right before a function you want to pause until a Promise is resolved. does not return a promise if in a synchronous function
 
 - How do you handle errors with `await`?
 
@@ -34,16 +35,17 @@ using try-catch blocks
 try is used to contain statements where exceptions can occur.
 catch block contains statements that specify what to do if an exception is throw in the try block
 
-throw, new Error.
+throw an exception, new Error.
 
 - What happens if you forget to use `await` on a Promise? In that case, what happens to the Promise rejection?
 
-Promise is rejected
-it'll return an unhandled Promise error
+Promise will continue to run asynchronously, but no pause.
+
+it'll return an unhandled Promise error; catch block will not be executed.
 
 - Which style of asynchronous programming do you prefer — callbacks, `Promise.then`, or `async/await`? Why?
 
-
+async/await, easier to write out.
 
 ## Notes
 
