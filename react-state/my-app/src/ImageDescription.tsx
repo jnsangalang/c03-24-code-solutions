@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 type Props = {
-  imageDescrip: string;
+  imageDescrip: string[];
 };
 
 export function ImageDescription({ imageDescrip }: Props) {
