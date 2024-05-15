@@ -2,12 +2,17 @@ import './ButtonContainer.css';
 type Props = {
   buttonText: string;
   onButtonClick: () => void;
+  className: string;
 };
 
-export function ButtonContainer({ buttonText, onButtonClick }: Props) {
+export function ButtonContainer({
+  buttonText,
+  onButtonClick,
+  className,
+}: Props) {
   return (
     <div>
-      <button id="button" className="cold" onClick={onButtonClick}>
+      <button className={className} onClick={onButtonClick}>
         {buttonText}
       </button>
     </div>
