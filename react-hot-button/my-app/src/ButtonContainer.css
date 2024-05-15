@@ -1,0 +1,29 @@
+.cold {
+  background-color: rgb(53, 28, 117);
+  color: rgb(255, 255, 255);
+}
+
+.cool {
+  background-color: rgb(103, 78, 167);
+  color: rgb(255, 255, 255);
+}
+
+.warm {
+  background-color: rgb(224, 102, 102);
+  color: rgb(255, 255, 255);
+}
+
+.warmer {
+  background-color: rgb(246, 178, 107);
+  color: rgb(0, 0, 0);
+}
+
+.hot {
+  background-color: rgb(255, 255, 0);
+  color: rgb(0, 0, 0);
+}
+
+.hottest {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+}
