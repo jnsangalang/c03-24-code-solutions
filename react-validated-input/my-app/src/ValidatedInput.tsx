@@ -7,15 +7,15 @@ export function ValidatedInput() {
   const [isValue, setIsValue] = useState('');
   let classNameCheck = 'hidden check';
   let classNameXMark = 'x-mark';
-  let resposiveMessage = 'Password Required';
+  let responsiveMessage = 'Password Required';
 
   if (isValue.length > 0 && isValue.length < 8) {
-    resposiveMessage = 'Password too short';
+    responsiveMessage = 'Password too short';
     classNameCheck = 'hidden check';
     classNameXMark = 'x-mark';
   }
   if (isValue.length >= 8) {
-    resposiveMessage = '';
+    responsiveMessage = '';
     classNameCheck = 'check';
     classNameXMark = 'hidden';
   }
@@ -39,7 +39,7 @@ export function ValidatedInput() {
           />
           <div className="absolute inset-y-0 right-2 flex items-center" />
         </div>
-        <div className="p-1 text-red-700">{resposiveMessage}</div>
+        <div className="p-1 text-red-700">{responsiveMessage}</div>
       </label>
     </div>
   );
