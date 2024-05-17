@@ -34,7 +34,9 @@ export function Stopwatch() {
 
   return (
     <div className="stopwatch">
-      <p className="watch-face">{time}</p>
+      <p className="watch-face" onClick={() => setTime(0)}>
+        {time}
+      </p>
       <FaPlay
         className={playClassName}
         onClick={() => {
