@@ -1,11 +1,10 @@
 import { PreviousButton } from './PreviousButton';
-import { RotatingBanner } from './RotatingBanner'
+import { RotatingBanner } from './RotatingBanner';
 import { NumberButtons } from './NumberedButtons';
 import { NextButton } from './NextButton';
-import './App.css'
-export type Animal = string;
-export type Props = Animal[];
-const items: Props = [
+import './App.css';
+export type Animals = string[];
+const items: Animals = [
   'Aardvark',
   'Bengal',
   'Caterpillar',
@@ -14,13 +13,14 @@ const items: Props = [
   'Ferret',
 ];
 console.log(items);
+console.log({ items });
 export default function App() {
-  return(
+  return (
     <>
-      <RotatingBanner items = {items}/>
-      <PreviousButton/>
-      <NumberButtons/>
-      <NextButton/>
+      <RotatingBanner items={items} />
+      <PreviousButton />
+      <NumberButtons />
+      <NextButton />
     </>
-  )
+  );
 }
