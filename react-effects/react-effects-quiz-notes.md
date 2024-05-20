@@ -6,17 +6,20 @@ Answer the following questions in the provided markdown file before turning in t
 
 - When is a component "mounted" to the DOM?
 
-when it is created and first inserted into the DOM
+when it is created/rendered for the first time and inserted into the DOM
 
 - What is a React Effect?
 
-a way to synchronize components with an external system.
+makes async calls, a way to synchronize components with an external system (things not in React)
 
 - When should you use an Effect and when should you not use an Effect?
 
-if the component is using a value that could change
+if the component is using a value that could change; async functions,
 
 - When do Effects run?
+  always runs after the first render
+
+run anytime when dependency array changed
 
 by default, it Effect will run after every time the component renders. delays code from running until render is reflected
 
@@ -37,6 +40,8 @@ avoid memory leaks
 return statement
 
 - When does the cleanup function run?
+
+when a component unmounts it runs the clean up function, and before each re render
 
 ## Notes
 
