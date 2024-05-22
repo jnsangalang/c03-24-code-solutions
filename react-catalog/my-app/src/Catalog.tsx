@@ -53,19 +53,16 @@ type Props = {
   product: Product;
 };
 function ProductCard({ product }: Props) {
+  const { productId, imageUrl, name, price, shortDescription } = product;
   return (
     <Link
-      to={`details/${product.productId}`}
+      to={`details/${productId}`}
       className="block cursor-pointer text-gray-900 rounded border border-gray-300 mb-4 shadow-sm hover:text-inherit">
-      <img
-        src={product.imageUrl}
-        className="object-contain h-72 w-full"
-        alt={product.name}
-      />
+      <img src={imageUrl} className="object-contain h-72 w-full" alt={name} />
       <div className="flex-auto p-6">
-        <h5 className="font-bold mb-3">{product.name}</h5>
-        <p className="mb-0 text-gray-600">{toDollars(product.price)}</p>
-        <p className="h-20 mb-0 overflow-hidden">{product.shortDescription}</p>
+        <h5 className="font-bold mb-3">{name}</h5>
+        <p className="mb-0 text-gray-600">{toDollars(price)}</p>
+        <p className="h-20 mb-0 overflow-hidden">{shortDescription}</p>
       </div>
     </Link>
   );
