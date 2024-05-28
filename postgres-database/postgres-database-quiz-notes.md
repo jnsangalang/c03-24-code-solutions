@@ -19,7 +19,7 @@ an object, instance of object, a single set of data with descriptive columns
 - What is an attribute and what other names are used to describe them?
 
 an identifying piece of information that serves to define further and expand primary key
-column, key, property
+column, key, property.
 
 ## Notes
 
