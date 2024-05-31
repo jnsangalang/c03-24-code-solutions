@@ -42,6 +42,9 @@ app.get('/api/films/:filmId', async (req, res, next) => {
     const param = [filmId];
     const result = await db.query(sql, param);
     const films = result.rows[0];
+    if (!films) {
+      throw new ClientError(400, `film ${filmId} does not exist`);
+    }
     res.json(films);
   } catch (err) {
     next(err);
