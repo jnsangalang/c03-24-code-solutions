@@ -6,7 +6,11 @@ Answer the following questions in the provided markdown file before turning in t
 
 - What is the purpose of the HTTP `GET` method?
 
+to request data from a specific resource
+
 - What is the appropriate `Content-Type` header for HTTP messages that contain JSON in their bodies?
+
+application/json
 
 ## Notes
 
