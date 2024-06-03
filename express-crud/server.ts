@@ -53,7 +53,7 @@ app.get('/api/grades/:gradeId', async (req, res, next) => {
 app.post('/api/grades', async (req, res, next) => {
   try {
     const { name, course, score } = req.body;
-    if (!Number.isInteger(+score)) {
+    if (!Number.isInteger(score)) {
       throw new ClientError(400, `need valid score`);
     }
     if (score < 0 || score > 100) {
