@@ -31,7 +31,7 @@ app.get('/api/films/:filmId', async (req, res, next) => {
   try {
     // const { filmId } = req.query;
     const filmId = req.params.filmId;
-    if (filmId === undefined) {
+    if (!Number.isInteger(+filmId)) {
       throw new ClientError(400, `filmId is required`);
     }
     const sql = `
@@ -43,7 +43,7 @@ app.get('/api/films/:filmId', async (req, res, next) => {
     const result = await db.query(sql, param);
     const films = result.rows[0];
     if (!films) {
-      throw new ClientError(400, `film ${filmId} does not exist`);
+      throw new ClientError(404, `film ${filmId} does not exist`);
     }
     res.json(films);
   } catch (err) {
