@@ -3,7 +3,7 @@ import pg from 'pg';
 import { ClientError, errorMiddleware } from './lib';
 
 const db = new pg.Pool({
-  connectionString: 'postgress://dev:dev@localhost/studentGradeTable',
+  connectionString: 'postgres://dev:dev@localhost/studentGradeTable',
   ssl: {
     //  Allow non-SSL traffic to localhost
     rejectUnauthorized: false,
@@ -49,6 +49,7 @@ app.get('/api/grades/:gradeId', async (req, res, next) => {
     next(err);
   }
 });
+
 app.post('/api/grades', async (req, res, next) => {
   try {
     const { name, course, score } = req.body;
@@ -68,17 +69,12 @@ app.post('/api/grades', async (req, res, next) => {
       `;
     const result = await db.query(sql, [name, course, score]);
     const [addedResult] = result.rows;
-    if (!addedResult) {
-      throw new ClientError(
-        404,
-        `Invalid entry, include name, course, and score`
-      );
-    }
     res.status(201).json(addedResult);
   } catch (err) {
     next(err);
   }
 });
+
 app.put('/api/grades/:gradeId', async (req, res, next) => {
   try {
     const { gradeId } = req.params;
@@ -113,6 +109,7 @@ app.put('/api/grades/:gradeId', async (req, res, next) => {
     next(err);
   }
 });
+
 app.delete('/api/grades/:gradeId', async (req, res, next) => {
   try {
     const { gradeId } = req.params;
