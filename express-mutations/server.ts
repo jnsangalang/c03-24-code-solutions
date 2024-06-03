@@ -38,7 +38,7 @@ app.get('/api/actors/:actorId', async (req, res, next) => {
 
 app.post('/api/actors', async (req, res, next) => {
   try {
-    const { firstName, lastName } = req.query;
+    const { firstName, lastName } = req.body;
     if (firstName === undefined || lastName === undefined) {
       throw new ClientError(400, `please enter valid names`);
     }
@@ -50,7 +50,7 @@ app.post('/api/actors', async (req, res, next) => {
     const result = await db.query(sql, [firstName, lastName]);
     const [addedActor] = result.rows;
     if (!addedActor) {
-      throw new ClientError(400, `Invalid name values`);
+      throw new ClientError(404, `actorId not found`);
     }
     res.status(201).json(addedActor);
   } catch (err) {
@@ -78,7 +78,7 @@ app.put('/api/actors/:actorId', async (req, res, next) => {
     const result = await db.query(sql, [firstName, lastName, actorId]);
     const [updatedActor] = result.rows;
     if (!updatedActor) {
-      throw new ClientError(400, `Invalid name values`);
+      throw new ClientError(404, `${actorId} not found`);
     }
     res.status(200).json(updatedActor);
   } catch (err) {
@@ -100,9 +100,9 @@ app.delete('/api/actors/:actorId', async (req, res, next) => {
     const result = await db.query(sql, [actorId]);
     const [deletedActor] = result.rows;
     if (!deletedActor) {
-      throw new ClientError(400, `Invalid name values`);
+      throw new ClientError(404, `${actorId} not found`);
     }
-    res.status(204).json(deletedActor);
+    res.status(204);
   } catch (err) {
     next(err);
   }
