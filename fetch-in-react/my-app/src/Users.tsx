@@ -19,26 +19,25 @@ export function Users() {
   const [user, setUser] = useState<User>();
 
   useEffect(() => {
+    async function getUsers() {
+      try {
+        const response = await fetch(
+          'https://jsonplaceholder.typicode.com/users'
+        );
+        if (!response.ok) {
+          throw new Error(`The response query failed`);
+        }
+        const users = await response.json();
+        setUsers(users);
+      } catch (err) {
+        setError(err);
+        console.log('it was an error');
+      } finally {
+        setIsLoading(false);
+      }
+    }
     getUsers();
   }, []);
-
-  async function getUsers() {
-    try {
-      const response = await fetch(
-        'https://jsonplaceholder.typicode.com/users'
-      );
-      if (!response.ok) {
-        throw new Error(`The response query failed`);
-      }
-      const users = await response.json();
-      setUsers(users);
-    } catch (err) {
-      setError(err);
-      console.log('it was an error');
-    } finally {
-      setIsLoading(false);
-    }
-  }
 
   if (isLoading) {
     return <p>Loading...</p>;

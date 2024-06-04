@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars -- Remove me */
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { UserCard } from './UserCard';
 import type { User } from './Users';
 
@@ -12,11 +12,7 @@ export function UserDetails({ userId, onCancel }: Props) {
   const [error, setError] = useState<unknown>();
   const [user, setUser] = useState<User>();
 
-  useEffect(() => {
-    getUser(userId);
-  }, [userId]);
-
-  async function getUser(userId: number) {
+  const getUser = useCallback(async (userId: number) => {
     try {
       const response = await fetch(
         `https://jsonplaceholder.typicode.com/users/${userId}`
@@ -25,7 +21,6 @@ export function UserDetails({ userId, onCancel }: Props) {
       if (!response.ok) {
         throw new Error(`there was an error with retrieving user`);
       }
-      console.log(response.status);
       const user = await response.json();
       setUser(user);
     } catch (err) {
@@ -33,7 +28,10 @@ export function UserDetails({ userId, onCancel }: Props) {
     } finally {
       setIsLoading(false);
     }
-  }
+  }, []);
+  useEffect(() => {
+    getUser(userId);
+  }, [getUser]);
 
   if (isLoading) {
     return <p>Loading...</p>;
