@@ -52,7 +52,7 @@ export function Todos() {
         throw new Error(`there was an error of ${response.status}`);
       }
       const addedTodo = await response.json();
-      setTodos((prevTodo) => [...prevTodo, addedTodo]);
+      setTodos([...todos, addedTodo]);
       return;
     } catch (err) {
       setError(err);
@@ -77,12 +77,9 @@ export function Todos() {
         throw new Error(`there was an error of ${response.status}`);
       }
       const updatedTodo = await response.json();
-      console.log(updatedTodo);
-      setTodos((prevTodos) => [
-        ...prevTodos.map((todo) =>
-          todo.todoId === updatedTodo.todoId ? updatedTodo : todo
-        ),
-      ]);
+      setTodos(
+        todos.map((t) => (t.todoId === updatedTodo.todoId ? updatedTodo : t))
+      );
     } catch (err) {
       setError(err);
     } finally {
