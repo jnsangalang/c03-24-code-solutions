@@ -29,9 +29,10 @@ export function UserDetails({ userId, onCancel }: Props) {
       setIsLoading(false);
     }
   }, []);
+
   useEffect(() => {
     getUser(userId);
-  }, [user]);
+  }, [getUser, userId]);
 
   if (isLoading) {
     return <p>Loading...</p>;
