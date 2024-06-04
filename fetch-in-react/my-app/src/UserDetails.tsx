@@ -31,7 +31,7 @@ export function UserDetails({ userId, onCancel }: Props) {
   }, []);
   useEffect(() => {
     getUser(userId);
-  }, [getUser]);
+  }, [user]);
 
   if (isLoading) {
     return <p>Loading...</p>;
