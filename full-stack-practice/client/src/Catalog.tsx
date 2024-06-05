@@ -1,8 +1,16 @@
 import { useEffect, useState } from 'react';
-import { Product } from '../../server/server.ts';
-import { toDollars } from '../src/lib/index';
+import { readCatalog, toDollars } from './lib';
 import { Link } from 'react-router-dom';
-import { ClientError } from '../../server/lib/client-error.ts';
+
+export type Product = {
+  productId: number;
+  name: string;
+  imageUrl: string;
+  price: number;
+  shortDescription: string;
+  longDescription: string;
+};
+
 export function Catalog() {
   const [products, setProducts] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -11,14 +19,7 @@ export function Catalog() {
   useEffect(() => {
     async function loadItems() {
       try {
-        const response = await fetch('/api/products');
-        if (!response.ok) {
-          throw new ClientError(400, 'result is invalid');
-        }
-        const items = await response.json();
-        if (!items) {
-          throw new ClientError(400, 'items are invalid');
-        }
+        const items = await readCatalog();
         setProducts(items);
       } catch (error) {
         setError(error);
@@ -56,6 +57,7 @@ export function Catalog() {
     </div>
   );
 }
+
 type Props = {
   product: Product;
 };

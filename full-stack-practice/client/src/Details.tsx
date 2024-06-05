@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react';
-import { Product, toDollars } from './lib';
+import { Product, readProduct, toDollars } from './lib';
 import { Link, useParams, useNavigate } from 'react-router-dom';
-import { ClientError } from '../../server/lib';
+
 export function Details() {
   const [product, setProduct] = useState<Product>();
   const [isLoading, setIsLoading] = useState(true);
-  4;
   const [error, setError] = useState<unknown>();
 
   const { productId } = useParams();
@@ -14,14 +13,7 @@ export function Details() {
   useEffect(() => {
     async function loadItems() {
       try {
-        const response = await fetch(`/api/products/${productId}`);
-        if (!response.ok) {
-          throw new ClientError(400, `product ${productId} is invalid`);
-        }
-        const product = await response.json();
-        if (!product) {
-          throw new ClientError(400, 'Invalid product');
-        }
+        const product = await readProduct(Number(productId));
         setProduct(product);
       } catch (error) {
         setError(error);
