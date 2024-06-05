@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { readProduct, type Product, toDollars } from '../lib';
 import { CartContext } from '../components/CartContext';

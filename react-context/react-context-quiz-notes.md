@@ -10,7 +10,7 @@ to pass data from one component to others without requiring props
 
 - What values can be stored in context?
 
-variables, functions,
+variables, functions, anything
 
 - How do you create context and make it available to the components?
 
@@ -21,6 +21,8 @@ use createContext()
 useContext()
 
 - When would you use context? (in addition to the best answer: "rarely")
+
+when you want to pass data down component tree without having to manually pass props
 
 ## Notes
 

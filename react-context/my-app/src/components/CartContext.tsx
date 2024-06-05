@@ -1,21 +1,31 @@
-import { createContext, useContext } from 'react';
+import { ReactNode, createContext, useState } from 'react';
 import { Product } from '../lib';
 
-type DefaultValue = {
+export type CartValue = {
   cart: Product[];
   addToCart: (product: Product) => void;
-  // children: ReactNode;
 };
-export const defaultValue: DefaultValue = {
+export const defaultValue: CartValue = {
   cart: [],
   addToCart: () => {},
-  // children: [],
+};
+
+type Props = {
+  children: ReactNode;
 };
 
 export const CartContext = createContext(defaultValue);
 
-export function useMyContext() {
-  useContext(CartContext);
+export function CartProvider({ children }: Props) {
+  const [cart, setCart] = useState<Product[]>([]);
 
-  // return <div>{value}</div>
+  function addToCart(product: Product) {
+    const updatedCart = [...cart, product];
+    setCart(updatedCart);
+  }
+  return (
+    <CartContext.Provider value={{ cart: cart, addToCart: addToCart }}>
+      {children}
+    </CartContext.Provider>
+  );
 }
