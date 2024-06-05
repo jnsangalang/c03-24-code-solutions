@@ -4,9 +4,29 @@ import { About } from './pages/About';
 import { Catalog } from './pages/Catalog';
 import { NotFound } from './pages/NotFound';
 import { ProductDetails } from './pages/ProductDetails';
-import { CartContext, defaultValue } from './components/CartContext';
+import { CartContext } from './components/CartContext';
+import { useState } from 'react';
+import { Product } from './lib';
 
 export function App() {
+  const [cart, setCart] = useState<Product[]>([]);
+
+  type DefaultValue = {
+    cart: Product[];
+    addToCart: (product: Product) => void;
+    // children: ReactNode;
+  };
+  const defaultValue: DefaultValue = {
+    cart: cart,
+    addToCart: addToCart,
+    // children: [],
+  };
+
+  function addToCart(product) {
+    const updatedCart = [...cart, product];
+    setCart(updatedCart);
+  }
+  console.log(cart);
   return (
     <CartContext.Provider value={defaultValue}>
       <Routes>

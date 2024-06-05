@@ -6,11 +6,19 @@ Answer the following questions in the provided markdown file before turning in t
 
 - What is the purpose of React "context"?
 
+to pass data from one component to others without requiring props
+
 - What values can be stored in context?
+
+variables, functions,
 
 - How do you create context and make it available to the components?
 
+use createContext()
+
 - How do you access the context values?
+
+useContext()
 
 - When would you use context? (in addition to the best answer: "rarely")
 
