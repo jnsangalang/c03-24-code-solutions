@@ -15,8 +15,6 @@ export function authMiddleware(
   const authorizationHeader = req.get('Authorization');
   const parsedToken = authorizationHeader?.split('Bearer ')[1];
 
-  console.log(parsedToken);
-
   if (!parsedToken) {
     throw new ClientError(401, 'authentication required');
   }

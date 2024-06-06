@@ -59,10 +59,12 @@ export async function insertTodo(todo: UnsavedTodo): Promise<Todo> {
 }
 
 export async function updateTodo(todo: Todo): Promise<Todo> {
+  const token = readToken();
   const req = {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify(todo),
   };
@@ -72,8 +74,10 @@ export async function updateTodo(todo: Todo): Promise<Todo> {
 }
 
 export async function removeTodo(todoId: number): Promise<void> {
+  const token = readToken();
   const req = {
     method: 'DELETE',
+    Authorization: `Bearer ${token}`,
   };
   const res = await fetch(`/api/todos/${todoId}`, req);
   if (!res.ok) throw new Error(`fetch Error ${res.status}`);
