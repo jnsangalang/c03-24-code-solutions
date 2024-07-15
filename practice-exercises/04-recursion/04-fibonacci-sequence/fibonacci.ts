@@ -1,3 +1,7 @@
 export function fibonacci(num: number): number {
-  return NaN;
+  if (num < 2) {
+    return num;
+  } else {
+    return fibonacci(num - 1) + fibonacci(num - 2);
+  }
 }
